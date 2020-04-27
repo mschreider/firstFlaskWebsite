@@ -10,8 +10,8 @@ def plot():
     from bokeh.embed import components
     from bokeh.resources import CDN
 
-    start = datetime.datetime(2015,12,1)
-    end = datetime.datetime(2016,3,10)
+    start = datetime.date.today() - datetime.timedelta(days=90)
+    end = datetime.date.today()
     df = data.DataReader(name="GOOG", data_source="yahoo",start=start,end=end) #dataframe object
 
     # date_increase = df.index[df.Close > df.Open]    # Condition applied to the range
